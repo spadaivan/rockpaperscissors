@@ -62,12 +62,15 @@ function getHumanChoice(){
     }
 
 function playGame(){
-
-    while (humanScore < 5 && computerScore < 5) {
+    let rounds = 0
+    while (rounds < 5) {
         playRound(getComputerChoice(), getHumanChoice());
-
+        rounds++;
     }
-    if (humanScore === 5){
+    if (humanScore === computerScore){
+        console.log("The game ended in a tie");
+    }
+    else if (humanScore === computerScore) {
         console.log("You win the game!");
     }
     else {
