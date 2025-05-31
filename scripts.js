@@ -57,23 +57,32 @@ function getHumanChoice(){
         console.log("Human score: ", humanScore, ". Computer Score: ", computerScore)
     }
 
-function playGame(){
-    let rounds = 0
-    while (rounds < 5) {
-        const humanSelection = getHumanChoice();     
-        const computerSelection = getComputerChoice();
-        playRound(computerSelection, humanSelection);
-        rounds++;
-    }
-    if (humanScore === computerScore){
-        console.log("The game ended in a tie");
-    }
-    else if (humanScore > computerScore) {
-        console.log("You win the game!");
-    }
-    else {
-        console.log("Computer wins the game")
-    }
-} 
+// function playGame(){
+//     let rounds = 0
+//     while (rounds < 5) {
+//         const humanSelection = getHumanChoice();     
+//         const computerSelection = getComputerChoice();
+//         playRound(computerSelection, humanSelection);
+//         rounds++;
+//     }
+//     if (humanScore === computerScore){
+//         console.log("The game ended in a tie");
+//     }
+//     else if (humanScore > computerScore) {
+//         console.log("You win the game!");
+//     }
+//     else {
+//         console.log("Computer wins the game")
+//     }
+// } 
 
-playGame();
+// playGame();
+
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+   button.addEventListener("click", () => {
+    playRound();
+    });
+});
